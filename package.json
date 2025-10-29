@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build --base=/smart-orange/",
+    "build": "vite build --base=/Smart-Orange/",
     "preview": "vite preview"
   },
   "devDependencies": {
