@@ -1,0 +1,119 @@
+.slider-section{
+  width: 100%;
+  position: relative;
+}
+.header {
+  padding: 24px 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10;
+  max-width: 1920px;
+}
+.nav {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+.nav-logo{
+  font-family: "Inter Tight", sans-serif;
+font-weight: 500;
+font-size: 32px;
+line-height: 0.9;
+letter-spacing: -0.04em;
+color: #0a0f13;
+}
+.nav {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+.slider-container {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 1920px;
+  overflow: hidden;
+}
+.slides-list {
+  display: flex;
+    transition: transform 0.5s ease;
+    padding: 0;
+    margin: 0;
+}
+
+.slide {
+  position: relative;
+  min-width: 100%;/* кожен слайд займає всю ширину контейнера. */
+  /* елемент НЕ буде стискатися,
+    він завжди залишиться своєї ширини/висоти.
+    Завдяки цьому завжди показується повний слайд,
+      а не половинка.*/
+  flex-shrink: 0;
+    /* "Секція завжди мінімум 360px заввишки, ідеально займає 60% висоти вікна, але ніколи не більша за 900px" .*/
+    min-height: clamp(360px, 60vh, 468px);
+      /* гумова висота без media */
+}
+
+.slide img {
+position: absolute;
+  inset: 0;           /* top:0; right:0; bottom:0; left:0 */
+  /* за допомогою наступних 3 властивості зображення стає гумовим і завжди заповнює кадр. */
+  width: 100%;
+  height: 100%;
+  object-fit: cover;  /* “кадрує” під рамку */
+  display: block;
+}
+.title-slide{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 11111;
+  font-weight: 400;
+    font-size: 96px;
+    line-height: 0.9;
+    letter-spacing: -0.04em;
+    text-align: center;
+    color: #eff3f5;
+}
+.hero-decoration{
+  position: absolute;
+  bottom: 25px;
+  left: 60px;
+  right: 60px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.hero-line{
+flex: 1 1 auto;
+  /* тягнеться між іконками */
+  max-width: 1737px;
+  /* верхня межа з макета */
+  height: 1px;
+  background: #0a0f13;
+  opacity: .2;
+}
+.button-prev,
+.button-next{
+  position: absolute;
+  transform: translateY(-50%);
+  top: 50%;
+  background-color: transparent;
+  border: none;
+  padding: 0;
+}
+.button-prev:disabled,
+.button-next:disabled{
+  opacity: 0.5;
+    cursor: not-allowed;
+}
+.button-prev {
+  left: 60px;
+}
+
+.button-next {
+  right: 20px;
+}
